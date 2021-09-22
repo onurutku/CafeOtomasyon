@@ -31,6 +31,7 @@ Partial Class Form1
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.gonder_TextBox1 = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'portlar_ComboBox1
@@ -73,7 +74,7 @@ Partial Class Form1
         'okunan_Label4
         '
         Me.okunan_Label4.AutoSize = True
-        Me.okunan_Label4.Location = New System.Drawing.Point(191, 67)
+        Me.okunan_Label4.Location = New System.Drawing.Point(169, 67)
         Me.okunan_Label4.Name = "okunan_Label4"
         Me.okunan_Label4.Size = New System.Drawing.Size(76, 13)
         Me.okunan_Label4.TabIndex = 8
@@ -86,12 +87,21 @@ Partial Class Form1
         '
         'Timer2
         '
+        Me.Timer2.Interval = 1000
+        '
+        'gonder_TextBox1
+        '
+        Me.gonder_TextBox1.Location = New System.Drawing.Point(251, 65)
+        Me.gonder_TextBox1.Name = "gonder_TextBox1"
+        Me.gonder_TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.gonder_TextBox1.TabIndex = 9
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(939, 607)
+        Me.Controls.Add(Me.gonder_TextBox1)
         Me.Controls.Add(Me.okunan_Label4)
         Me.Controls.Add(Me.sayi_Label3)
         Me.Controls.Add(Me.Button2)
@@ -112,4 +122,5 @@ Partial Class Form1
     Friend WithEvents Timer1 As Timer
     Friend WithEvents SerialPort1 As IO.Ports.SerialPort
     Friend WithEvents Timer2 As Timer
+    Friend WithEvents gonder_TextBox1 As TextBox
 End Class

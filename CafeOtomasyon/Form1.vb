@@ -24,14 +24,21 @@
     End Sub
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
-        SerialPort1.PortName = portlar_ComboBox1.Text
-        SerialPort1.BaudRate = boudrate_ComboBox2.Text
-        SerialPort1.Open()
-        Dim okunan = SerialPort1.ReadLine()
-        If okunan = 1 Then
-            Dim sonuc = sayi_Label3.Text + 1
-            sayi_Label3.Text = sonuc
-        End If
-        SerialPort1.Close()
+        Try
+            SerialPort1.PortName = portlar_ComboBox1.Text
+            SerialPort1.BaudRate = boudrate_ComboBox2.Text
+            SerialPort1.Open()
+            Dim okunan = SerialPort1.ReadLine()
+            If okunan = 1 Then
+                Dim sonuc = sayi_Label3.Text + 1
+                sayi_Label3.Text = sonuc
+            End If
+
+            SerialPort1.WriteLine(gonder_TextBox1.Text)
+            SerialPort1.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
     End Sub
 End Class
