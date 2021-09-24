@@ -23,9 +23,11 @@ void loop() {
   sure=pulseIn(echo,HIGH);
   mesafe=(sure/2)/29.1;
   if (mesafe < 50){
-    Serial.println("1");
-    digitalWrite(led,HIGH);
-    delay(2000);
-    digitalWrite(led,LOW);
+      Serial.println("1");
+    //digitalWrite(led,HIGH);
+    //delay(1000);
+    //digitalWrite(led,LOW);
     }
+    delay(1000);
+    digitalWrite(echo,LOW);
 }
